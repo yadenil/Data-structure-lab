@@ -1,0 +1,114 @@
+QUESTION 1
+
+
+import java.util.Scanner;
+
+public class Search {
+	public static void main(String[] args) {
+		Scanner  sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		
+		int [] array = new int[size];
+		System.out.println("enter" + size + "numbers");
+		
+		for(int i = 0; i < size; i++) {
+			array[i] = sc.nextInt();
+		}
+		System.out.println("what number you want to get? ");
+		int search = sc.nextInt();
+		
+		int count = 0;
+		for(int i = 0; i < size; i++) {
+			if (array[i] == search) {
+				count += 1;
+			}
+			
+		}
+		
+		
+		System.out.println("the number occurs" + count + "times");
+	}
+
+QUESTION 2
+
+
+public class Stack {
+	int top;
+	int size;
+	int[] array;
+	
+	public Stack(int capacity){
+		array = new int[capacity];
+		top = -1;
+		size = 0;
+	}
+	public void push(int value) {
+		if(top == array.length - 1) {
+			System.out.println("the stack is full")
+		
+		}array[++top] = value;
+		size++;
+	}
+	public int pop() {
+		if(top == -1) {
+			return -1;
+		}return array[++top];
+	}
+	public int peek() {
+		if(top == -1) {
+			return -1;
+		}
+		return array[top];
+	}
+	public boolean is_empty() {
+		return size == 0;
+	}
+	public boolean is_full() {
+		return (top == size - 1);
+	}
+}
+QUESTION 3
+
+import java.util.Stack;
+
+public class QueueWithStack {
+	Stack stack1 = new Stack();
+	Stack stack2 = new Stack();
+	
+	public void enqueue(int value) {
+		stack1.push(value));
+	}
+	
+	
+	public int dequeue() {
+		if(stack2.is_empty()) {
+			while(!stack1.is_empty) {
+				stack2.push(stack1.pop());
+			}
+		}return stack2.pop();
+	}
+	public int peek() {
+		if(stack2.is_empty()) {
+			while(!stack1.is_empty) {
+				stack2.push(stack1.pop());
+			}
+		}return stack2.pop();
+	}
+}	
+
+
+QUSETION 4
+
+public class BubbleSort {
+	public void sort(String[] array) {
+		for(int i = 0; i < array.length; i++) {
+			for(int j = 1; j < array.length; i++) {
+				if(array[j] < array[j-1]) {
+					var temp = array[j];
+					array[j] = array[j-1];
+					array[j-1] = temp;
+				}
+			}
+		}
+	}
+}
